@@ -22,7 +22,10 @@ class Screen:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
-                
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    circles.checkClick(mouse_x, mouse_y)
+                        
 
             pygame.display.flip()
         pygame.quit()
